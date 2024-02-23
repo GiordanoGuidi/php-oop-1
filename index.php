@@ -5,8 +5,19 @@ class Movie
         public $title;
         public $type;
         public $length;
+        //Funzione
+        public function introduce()
+        {
+            echo 'Ciao, sono' . ' ' . $this->title;
+        }
 
     }
+
+    //Oggetto/Istanza della classe Movie
+    $movie1 = new Movie();
+    $movie1->title = 'Joker';
+    $movie1->introduce();
+
 
 ?>
 
