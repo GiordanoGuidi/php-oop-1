@@ -25,6 +25,13 @@ class Movie
     $movie1->introduce();
 
 
+    $movie2 = new Movie('Top Gun','Action','120 min');
+    $movie1->introduce();
+
+    var_dump($movie1,$movie2)
+
+
+
 ?>
 
 <!DOCTYPE html>
