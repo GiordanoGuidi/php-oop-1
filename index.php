@@ -1,4 +1,12 @@
 <?php
+class Movie
+    {
+        //variabili di istanza
+        public $title;
+        public $type;
+        public $length;
+
+    }
 
 ?>
 
@@ -10,6 +18,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
     
+    ?>
+        
 </body>
 </html>
