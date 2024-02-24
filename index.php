@@ -8,18 +8,20 @@ class Movie
         public $type;
         public $length;
         public $director;
+        public $actor;
         //Funzione
         public function introduce()
         {
             echo 'Ciao, sono' . ' ' . $this->title;
         }
         //Costruttore
-        public function __construct($title, $type, $length, Director $director)
+        public function __construct($title, $type, $length, Director $director, Actor $actor)
         {
             $this->title= $title;
             $this->type= $type;
             $this->length= $length;
             $this->director=$director;
+            $this->actor=$actor;
         }
 
     }
@@ -62,7 +64,7 @@ class Director
         {
             $this->firstName= $firstName;
             $this->lastName=$lastName;
-            $this->age->$age;
+            $this->age= $age;
         }
 
         public function saluta()
@@ -73,19 +75,22 @@ class Director
 
     //# Istanze delle Classi
     //Istanza della classe DIRECTOR
-    $director1 = new Director('Todd','Phillips', 57);
-    $director2 = new Director('Tony', 'Scott', 68);
+    $director1 = new Director('Todd','Phillips', '57');
+    $director2 = new Director('Tony', 'Scott', '68');
     echo $director1->introduce();
+
+    //Istanza della classe ACTOR
+    $actor1 = new Actor('Joaquin','Phoenix','49');
+    $actor2 = new Actor('Tom','Cruise','61');
+
 
 
     //Oggetto/Istanza della classe Movie
-    $movie1 = new Movie('Joker','Action','140 min',$director1);
-    // $movie1->introduce();
+    $movie1 = new Movie('Joker','Action','140 min',$director1,$actor1);
+    var_dump($movie1);
 
     //SECONDO OGGETTO MOVIE
-    $movie2 = new Movie('Top Gun','Action','120 min',$director2);
-    // $movie2->introduce();
-    // echo $movie1->director->saluta();
+    $movie2 = new Movie('Top Gun','Action','120 min',$director2,$actor2);
 ?>
 
 <!DOCTYPE html>
