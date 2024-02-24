@@ -8,20 +8,20 @@ class Movie
         public $type;
         public $length;
         public $director;
-        public $actor;
+        public $actors;
         //Funzione
         public function introduce()
         {
             echo 'Ciao, sono' . ' ' . $this->title;
         }
         //Costruttore
-        public function __construct($title, $type, $length, Director $director, Actor $actor)
+        public function __construct($title, $type, $length, Director $director, array $actors)
         {
             $this->title= $title;
             $this->type= $type;
             $this->length= $length;
             $this->director=$director;
-            $this->actor=$actor;
+            $this->actors=$actors;
         }
 
     }
@@ -51,7 +51,7 @@ class Director
             echo 'ciao sono'. ' ' . $this->getFullName();
         }
     }
-
+    //CLASSE ACTOR
     class Actor
     {
         //variabili di istanza
@@ -83,14 +83,20 @@ class Director
     $actor1 = new Actor('Joaquin','Phoenix','49');
     $actor2 = new Actor('Tom','Cruise','61');
 
+    //Array degli attori
+    $actors= [
+        new Actor('Joaquin','Phoenix','49'),
+        new Actor('Tom','Cruise','61'),
+    ];
 
 
-    //Oggetto/Istanza della classe Movie
-    $movie1 = new Movie('Joker','Action','140 min',$director1,$actor1);
+
+    //Istanza della classe Movie
+    $movie1 = new Movie('Joker','Action','140 min',$director1,$actors);
     var_dump($movie1);
 
-    //SECONDO OGGETTO MOVIE
-    $movie2 = new Movie('Top Gun','Action','120 min',$director2,$actor2);
+    //Seconda istanza MOVIE
+    $movie2 = new Movie('Top Gun','Action','120 min',$director2,$actors);
 ?>
 
 <!DOCTYPE html>
