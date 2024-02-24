@@ -27,12 +27,42 @@ class Movie
 class Director
     {
         //variabili di istanza
-        public $name;
+        public $firstName;
+        public $lastName;
+        public $age;
 
         //Costruttore
-        public function __construct($name)
+        public function __construct($firstName,$lastName,$age)
         {
-            $this->name= $name;
+            $this->firstName= $firstName;
+            $this->lastName= $lastName;
+            $this->age=$age;
+        }
+        //Metodo che costruisce il nome completo
+        function getFullName()
+        {
+            return  $this->firstName . ' ' . $this->lastName;
+        }
+        //Metodo per presentare il director
+        public function introduce()
+        {
+            echo 'ciao sono'. ' ' . $this->getFullName();
+        }
+    }
+
+    class Actor
+    {
+        //variabili di istanza
+        public $firstName;
+        public $lastName;
+        public$age;
+
+        //Costruttore
+        public function __construct($firstName,$lastName,$age)
+        {
+            $this->firstName= $firstName;
+            $this->lastName=$lastName;
+            $this->age->$age;
         }
 
         public function saluta()
@@ -40,19 +70,22 @@ class Director
             echo 'ciao sono'. ' ' . $this->name;
         }
     }
+
     //# Istanze delle Classi
     //Istanza della classe DIRECTOR
-    $director1 = new Director('Todd Phillips');
-    $director2 = new Director('Tony Scott');
+    $director1 = new Director('Todd','Phillips', 57);
+    $director2 = new Director('Tony', 'Scott', 68);
+    echo $director1->introduce();
+
 
     //Oggetto/Istanza della classe Movie
     $movie1 = new Movie('Joker','Action','140 min',$director1);
     // $movie1->introduce();
-    
+
     //SECONDO OGGETTO MOVIE
     $movie2 = new Movie('Top Gun','Action','120 min',$director2);
     // $movie2->introduce();
-    echo $movie1->director->saluta();
+    // echo $movie1->director->saluta();
 ?>
 
 <!DOCTYPE html>
