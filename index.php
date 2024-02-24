@@ -26,6 +26,7 @@ class Movie
 //CLASSE DIRECTOR
 class Director
     {
+        //variabili di istanza
         public $name;
 
         //Costruttore
@@ -36,26 +37,22 @@ class Director
 
         public function saluta()
         {
-            echo 'ciao sono'. ' ' .$name;
+            echo 'ciao sono'. ' ' . $this->name;
         }
     }
+    //# Istanze delle Classi
     //Istanza della classe DIRECTOR
     $director1 = new Director('Todd Phillips');
     $director2 = new Director('Tony Scott');
-    // var_dump($director1,$director2);
 
-    //# Istanze delle Classi
     //Oggetto/Istanza della classe Movie
     $movie1 = new Movie('Joker','Action','140 min',$director1);
-    $movie1->introduce();
+    // $movie1->introduce();
+    
     //SECONDO OGGETTO MOVIE
     $movie2 = new Movie('Top Gun','Action','120 min',$director2);
-    $movie1->introduce();
-    var_dump($movie1->$director1->saluta(),$movie2);
-
-
-
-
+    // $movie2->introduce();
+    echo $movie1->director->saluta();
 ?>
 
 <!DOCTYPE html>
