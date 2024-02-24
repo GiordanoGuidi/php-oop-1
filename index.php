@@ -1,88 +1,13 @@
 <?php
-//# Classi
-//CLASSE MOVIE
-class Movie
-    {
-        //variabili di istanza
-        public $title;
-        public $type;
-        public $length;
-        public $director;
-        public $actors;
-        //Funzione
-        public function introduce()
-        {
-            echo 'Ciao, sono' . ' ' . $this->title;
-        }
-        //Costruttore
-        public function __construct($title, $type, $length, Director $director, array $actors)
-        {
-            $this->title= $title;
-            $this->type= $type;
-            $this->length= $length;
-            $this->director=$director;
-            $this->actors=$actors;
-        }
+   require_once __DIR__ . '/database/db.php';
 
-    }
-//CLASSE DIRECTOR
-class Director
-    {
-        //variabili di istanza
-        public $firstName;
-        public $lastName;
-        public $age;
-
-        //Costruttore
-        public function __construct($firstName,$lastName,$age)
-        {
-            $this->firstName= $firstName;
-            $this->lastName= $lastName;
-            $this->age=$age;
-        }
-        //Metodo che costruisce il nome completo
-        function getFullName()
-        {
-            return  $this->firstName . ' ' . $this->lastName;
-        }
-        //Metodo per presentare il director
-        public function introduce()
-        {
-            echo 'ciao sono'. ' ' . $this->getFullName();
-        }
-    }
-    //CLASSE ACTOR
-    class Actor
-    {
-        //variabili di istanza
-        public $firstName;
-        public $lastName;
-        public$age;
-
-        //Costruttore
-        public function __construct($firstName,$lastName,$age)
-        {
-            $this->firstName= $firstName;
-            $this->lastName=$lastName;
-            $this->age= $age;
-        }
-
-        public function saluta()
-        {
-            echo 'ciao sono'. ' ' . $this->name;
-        }
-    }
-
-    //# Istanze delle Classi
+    //# Istanze Director
     //Istanza della classe DIRECTOR
     $director1 = new Director('Todd','Phillips', '57');
     $director2 = new Director('Tony', 'Scott', '68');
-    echo $director1->introduce();
 
-    //Istanza della classe ACTOR
-    $actor1 = new Actor('Joaquin','Phoenix','49');
-    $actor2 = new Actor('Tom','Cruise','61');
-
+    //# Istanze classe ACTOR
+   
     //Array degli attori
     $actors= [
         new Actor('Joaquin','Phoenix','49'),
@@ -90,12 +15,10 @@ class Director
     ];
 
 
-
-    //Istanza della classe Movie
+    //# Istanze classe Movie
     $movie1 = new Movie('Joker','Action','140 min',$director1,$actors);
     var_dump($movie1);
-
-    //Seconda istanza MOVIE
+    echo $movie1->actors[0]->firstName;
     $movie2 = new Movie('Top Gun','Action','120 min',$director2,$actors);
 ?>
 
