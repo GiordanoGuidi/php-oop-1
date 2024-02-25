@@ -16,8 +16,8 @@ class Actor
         $this->age= $age;
     }
 
-    public function saluta()
+    public function getFullName()
     {
-        echo 'ciao sono'. ' ' . $this->name;
+        echo $this->firstName . ' ' . $this->lastName;
     }
 }
